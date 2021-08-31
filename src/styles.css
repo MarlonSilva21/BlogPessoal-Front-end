@@ -3,3 +3,19 @@
 html{
     scroll-behavior: smooth;
 }
+
+.fs-54{
+    font-size: 54pt;
+}
+
+.fs-18{
+    font-size: 18pt;
+}
+
+.bg-my-secondary{
+    background: repeating-linear-gradient(45deg, black, #014ea1 100px)  ;
+}
+
+.bg-my-secondary-nr{
+    background-color: #014ea1;
+}
