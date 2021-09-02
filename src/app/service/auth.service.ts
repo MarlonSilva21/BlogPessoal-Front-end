@@ -15,7 +15,10 @@ export class AuthService {
   ) { }
 
   entrar(userLogin: UserLogin): Observable<UserLogin>{
+    
+    console.log(environment.token)
     return this.http.post<UserLogin>('https://marlonblog.herokuapp.com/usuarios/logar', userLogin)
+    
   }
 
   cadastrar(user: User): Observable<User>{
