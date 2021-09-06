@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
+import {relativeTime} from "ngx-bootstrap/chronos/duration/humanize";
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,14 @@ export class TemaService {
 
   getAllTema(): Observable<Tema[]> {
     return this.http.get<Tema[]>('https://marlonblog.herokuapp.com/tema', this.token)
-  }  
+  }
 
   getByIdTema(id: number): Observable<Tema> {
     return this.http.get<Tema>(`https://marlonblog.herokuapp.com/tema/${id}`, this.token)
+  }
+
+  getByNomeTema(nome: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://marlonblog.herokuapp.com/tema/nome/${nome}`, this.token)
   }
 
   postTema(tema: Tema): Observable<Tema> {
